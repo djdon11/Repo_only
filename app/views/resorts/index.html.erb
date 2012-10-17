@@ -1,4 +1,13 @@
 <h1>Resorts</h1> <br />
+
+    <%= form_tag resorts_path, :method => 'get' do %>  
+      <span> Latitude: </span>
+        <%= text_field_tag :latitude, params[:latitude] %>  
+			<span> longitude: </span>
+				<%= text_field_tag :longitude, params[:longitude] %>  
+				<%= submit_tag "Search", :name => nil, :class => "btn btn-primary" %>
+    <% end %>  
+
 <table class="table table-striped">
   <tr>
     <th>Name</th>

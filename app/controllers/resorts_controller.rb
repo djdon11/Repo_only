@@ -2,8 +2,12 @@ class ResortsController < ApplicationController
   # GET /resorts
   # GET /resorts.json
   def index
-    @resorts = Resort.all
-
+    
+		if params.has_key?(:latitude) and params.has_key?(:longitude)
+			@resorts = Resort.near([params[:latitude],params[:longitude]] , 100, :order => :distance)
+		else
+			@resorts = Resort.all
+		end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @resorts }
