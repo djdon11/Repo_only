@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @resort.name %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @resort.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @resort.longitude %>
+</p>
+
+
+<%= link_to 'Edit', edit_resort_path(@resort) %> |
+<%= link_to 'Back', resorts_path %>

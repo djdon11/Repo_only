@@ -1,0 +1,26 @@
+<h1>Resorts</h1> <br />
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th align="center">Action</th>
+  </tr>
+
+<% @resorts.each do |resort| %>
+  <tr>
+    <td><%= resort.name %></td>
+    <td><%= resort.latitude %></td>
+    <td><%= resort.longitude %></td>
+    <td>
+			<%= link_to 'Show', resort %> |
+			<%= link_to 'Edit', edit_resort_path(resort) %> |
+			<%= link_to 'Destroy', resort, confirm: 'Are you sure to delete this resort?', method: :delete %>
+		</td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Resort', new_resort_path %>
