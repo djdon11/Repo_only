@@ -4,9 +4,9 @@ class ResortsController < ApplicationController
   def index
     
 		if params.has_key?(:latitude) and params.has_key?(:longitude)
-			@resorts = Resort.near([params[:latitude],params[:longitude]] , 100, :order => :distance)
+			@resorts = Resort.near([params[:latitude],params[:longitude]] , 100, :order => :distance).page params[:page]
 		else
-			@resorts = Resort.all
+			@resorts = Resort.page params[:page]
 		end
     respond_to do |format|
       format.html # index.html.erb

@@ -12,6 +12,7 @@ resorts_file = "#{Rails.root}/db/seed_data/resorts.csv"
 
 begin
 	p "Creating Resorts..."
+	Resort.delete_all
 	resorts = CSV.read(resorts_file, :headers => true, :header_converters => :symbol)
 	resorts.each do |row|
 		Resort.create!(:name => row[0], :latitude => row[1], :longitude => row[2])

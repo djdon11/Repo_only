@@ -1,13 +1,20 @@
 <h1 class="muted">Resorts</h1>
 	<blockquote class="pull-right">
+		<% if @resorts.length==0 %>
+			<div class="alert alert-info">
+				<button type="button" class="close" data-dismiss="alert">x</button>
+				<strong>NOTE:</strong> Please enter both latitude and longitude to get the search results.
+			</div>
+		<% end %>
 		<%= form_tag resorts_path, :method => 'get', :class => 'form-search' do %>  
       <label class="radio"> Latitude: </label>
         <%= text_field_tag :latitude, params[:latitude], :class=>'input-medium search-query', :placeholder=>'Enter Latitude' %>  
-			<label class="radio"> longitude: </label>
+			<label class="radio"> Longitude: </label>
 				<%= text_field_tag :longitude, params[:longitude], :class=>'input-medium search-query' , :placeholder=>'Enter Longitude' %>  
 				<%= submit_tag 'Search', :name => nil, :class => "btn btn-primary" %>
 				<%= link_to 'Clear Search', resorts_path , :class => "btn" %>
     <% end %>
+		<small>Searching with latitude & longitude will give result list in ascending distance (i.e. nearest will come first)</small>
 	</blockquote>
 
 <table class="table table-striped table-bordered">
@@ -37,6 +44,10 @@
   </tr>
 <% end %>
 </table>
+<div class="pull-left">
+	<%= paginate @resorts %>
+</div>
 <div class="pull-right">
+	<br />
 	<%= link_to 'New Resort', new_resort_path, :class=>"btn" %>
 </div>
