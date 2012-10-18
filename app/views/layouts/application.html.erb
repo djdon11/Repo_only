@@ -13,26 +13,37 @@
   </head>
   <body>
     <header class="navbar navbar-fixed-top">
-			<a class="brand" href="/">Ski Resorts</a>
-      <nav class="navbar-inner">
-        <div class="container">
-          <%#= render 'layouts/navigation' %>
-        </div>
-      </nav>
-    </header>
+			<div class="navbar-inner">
+				<%= link_to 'Ski Resorts', root_path, :class=>"brand" %>
+				<ul class="nav nav-pills">
+					<li class="active">
+						<%= link_to 'Home', resorts_path %>
+					</li>
+				</ul>
+			</div>
+		</header>
     <div id="main" role="main">
       <div class="container">
         <div class="content">
            <div class="row">
             <div class="span12">
-              <%#= render 'layouts/messages' %>
               <%= yield %>
             </div>
           </div>
-          <footer>
-          </footer>
         </div>
       </div> <!--! end of .container -->
+			<footer>
+				<div class="container">
+					<div class="row">
+						<div class="span12">
+							&nbsp;
+						</div>
+						<div class="span12">
+							<p class="muted">&copy; Ski Resorts All Rights Reserved</p>
+						</div>
+					</div>
+				</div>
+			</footer>
     </div> <!--! end of #main -->
   </body>
 </html>

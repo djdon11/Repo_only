@@ -10,19 +10,28 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name%><br />
-    <%= f.text_field :name %>
+	
+	<div class="control-group">
+    <%= f.label :name, :class=>"control-label"%>
+    <div class="controls">
+      <%= f.text_field :name %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :latitude %><br />
-    <%= f.text_field :latitude %>
+	
+	<div class="control-group">
+    <%= f.label :latitude , :class=>"control-label" %>
+    <div class="controls">
+      <%= f.text_field :latitude %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :longitude %><br />
-    <%= f.text_field :longitude %>
+	
+	<div class="control-group">
+    <%= f.label :longitude, :class=>"control-label" %>
+    <div class="controls">
+      <%= f.text_field :longitude %>
+    </div>
   </div>
+  
   <div class="actions">
     <%= f.submit :class => "btn btn-primary"  %>
   </div>
