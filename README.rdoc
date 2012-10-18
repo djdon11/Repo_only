@@ -1,0 +1,11 @@
+Run bundle install
+
+Run rake db:create ##NOTE: I am using mysql2; so for other adapter and configuration; database.yml should be change
+
+Run rake db:migrate
+
+Run rake db:seed //TO load some dummy data of resorts (Name, Latitude, Longitude)
+
+Run rails server
+
+Now running localhost:3000 should show the resorts listing
