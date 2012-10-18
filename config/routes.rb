@@ -1,4 +1,6 @@
 SkiResorts::Application.routes.draw do
+  resources :resorts
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -10,8 +12,7 @@ SkiResorts::Application.routes.draw do
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
 	
-	resources :resorts
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
+	# Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
   # Sample resource route with options:
