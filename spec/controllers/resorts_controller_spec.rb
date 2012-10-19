@@ -40,14 +40,7 @@ describe ResortsController do
       get :index, {}, valid_session
       assigns(:resorts).should eq([resort])
     end
-		
-		it 'mock geocoding' do
-			mock_geocoding!
-			address = Resort(:address)
-			address.lat.should eq(1.0)
-			address.lng.should eq(2.0)
-		end
-  end
+	end
 
   describe "GET show" do
     it "assigns the requested resort as @resort" do

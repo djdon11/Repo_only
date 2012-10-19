@@ -9,3 +9,5 @@ Run rake db:seed //TO load some dummy data of resorts (Name, Latitude, Longitude
 Run rails server
 
 Now running localhost:3000 should show the resorts listing
+
+To Test the search method of resorts.rb RUN bundle exec rspec spec/models/resort_spec.rb
