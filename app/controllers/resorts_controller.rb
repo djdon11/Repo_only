@@ -3,11 +3,13 @@ class ResortsController < ApplicationController
   # GET /resorts.json
   def index
     
-		if params.has_key?(:latitude) and params.has_key?(:longitude)
-			@resorts = Resort.near([params[:latitude],params[:longitude]] , 100, :order => :distance).page params[:page]
-		else
-			@resorts = Resort.page params[:page]
-		end
+		latitude = params.has_key?(:latitude) && !params[:latitude].blank? ? params[:latitude] : ''
+		longitude = params.has_key?(:longitude) && !params[:longitude].blank? ? params[:longitude] : ''
+		
+		resort_list = Resort.search(latitude, longitude)
+		
+		@resorts = resort_list.page params[:page]
+		
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @resorts }

@@ -13,8 +13,10 @@ body { padding-top: 60px; background-color: #eee; }
   text-decoration: none;
   border: 1px solid #ddd;
   border-left-width: 0;
+	background-color: #007FCC;
+	color: #fff;
 }
 
 .pagination a:hover, .pagination .active a {
-	background-color: #999999;
+	background-color: #007FCC;
 }

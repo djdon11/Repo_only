@@ -8,11 +8,11 @@
 		<% end %>
 		<%= form_tag resorts_path, :method => 'get', :class => 'form-search' do %>  
       <label class="radio"> Latitude: </label>
-        <%= text_field_tag :latitude, params[:latitude], :class=>'input-medium search-query', :placeholder=>'Enter Latitude' %>  
+        <%= text_field_tag :latitude, params[:latitude], :class=>'input-medium search-query', :placeholder=>'Enter Latitude' , :title => "e.g. 45.41010" %>  
 			<label class="radio"> Longitude: </label>
-				<%= text_field_tag :longitude, params[:longitude], :class=>'input-medium search-query' , :placeholder=>'Enter Longitude' %>  
+				<%= text_field_tag :longitude, params[:longitude], :class=>'input-medium search-query' , :placeholder=>'Enter Longitude' , :title => "e.g. 6.60302" %>  
 				<%= submit_tag 'Search', :name => nil, :class => "btn btn-primary" %>
-				<%= link_to 'Clear Search', resorts_path , :class => "btn" %>
+				<%= link_to 'Clear Search', resorts_path , :class => "btn", :title => "Clear Search Result" %>
     <% end %>
 		<small>Searching with latitude & longitude will give result list in ascending distance (i.e. nearest will come first)</small>
 	</blockquote>
@@ -49,5 +49,5 @@
 </div>
 <div class="pull-right">
 	<br />
-	<%= link_to 'New Resort', new_resort_path, :class=>"btn" %>
+	<%= link_to 'New Resort', new_resort_path, :class=>"btn" , :title => "Create New Resort" %>
 </div>
