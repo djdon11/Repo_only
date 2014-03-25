@@ -1,0 +1,110 @@
+  <header>
+    <ul>
+      <li class="title">News
+      <li class="exit"><a class="exit" {{action "close" on="click"}}>Exit</a>
+    </ul>
+  </header>
+  <div class="content">
+    <ul class="rows">
+      <li class="row label">
+        <label>Enter your information below to feed nto your News section.</label>
+        <div class="help">
+          <span class="icon">?</span>
+          <span class="ui-tooltip-bottom">Enter your information below to feed into your News ection.</span>
+        </div>
+      <li class="row half blog">
+      {{view App.Views.ControlPanel.Light disabledBinding="news.news_blog_disabled" classBinding="this.disabled"}}
+        <label>Blog</label>
+        {{view Ember.Select
+        viewName="band_blog_platform"
+        contentBinding="App.Controllers.ControlPanel.appConstants.blogPlatform"
+        optionLabelPath="content.name"
+        optionValuePath="content._id"
+        prompt="Blog Platform"
+        selectionBinding="App.Controllers.ControlPanel.band.details.blog_platform"
+        }}
+        <div class="help">
+          <span class="icon">?</span>
+          <span class="ui-tooltip-bottom">Select your existing Blog Platform below. You can turn on nd off the Blog feed into your News section by c
+        </div>
+      <li class="row half blog url">
+        <label>Blog URL</label>
+        {{#if news.blog_url}}
+          {{view Ember.TextField valueBinding="news.blog_url"}}
+        {{else}}
+          <input placeholder="www.yourblogblogs" {{bindAttr value="news.blog_url"}}
+        {{/if}}
+        <div class="help">
+          <span class="icon">?</span>
+          <span class="ui-tooltip-bottom">Enter or aste the URL of your current Blog.</span>
+        </div>
+      <li class="row half facebook">
+      {{view App.Views.ControlPanel.Light disabledBinding="news.news_fb_disabled" classBinding="this.disabled"}}
+      
+        <label>Facebook</label>
+        {{#if news.fb_handle}}
+          {{view Ember.TextField valueBinding="news.fb_handle"}}
+        {{else}}
+          <input placeholder="Username" {{bindAttr value="news.fb_handle"}}
+        {{/if}}
+        <div class="help">
+          <span class="icon">?</span>
+          <span class="ui-tooltip-bottom">Enter your Facebook Username below. This will allow your acebook Wall infor mation to appear in your News 
+        </div>
+      <li class="row half twitter">
+        {{view App.Views.ControlPanel.Light disabledBinding="news.news_twitter_disabled" classBinding="this.disabled"}}
+        <label>Twitter</label>
+        {{#if news.twitter_handle}}
+          {{view Ember.TextField valueBinding="news.twitter_handle"}}
+        {{else}}
+          <input placeholder="Username" {{bindAttr value="news.twitter_handle"}}
+        {{/if}}
+        <div class="help">
+          <span class="icon">?</span>
+          <span class="ui-tooltip-bottom">Enter your Twitter Username. Your Twitter posts will appear in your News Feed. You can turn on and off he 
+        </div>
+      <li class="row third email signup">
+        {{view App.Views.ControlPanel.Light disabledBinding="news.news_email_disabled" classBinding="this.disabled"}}
+        <label>Email Sign Up Field</label>
+        {{view Ember.Select
+        viewName="band_email_provider"
+        contentBinding="App.Controllers.ControlPanel.appConstants.emailProvider"
+        optionLabelPath="content.name"
+        optionValuePath="content._id"
+        prompt="Email Provider"
+        selectionBinding="App.Controllers.ControlPanel.band.details.email_provider"
+        }}
+        <div class="help">
+          <span class="icon">?</span>
+          <span class="ui-tooltip-bottom">Select from the supported Email providers below. This will allow you to easily collect your fans email ddr
+        </div>
+      <li class="row email list">
+        <label>Email List</label>
+        <select>
+          <option selected>List Name</option>
+          <option></option>
+          <option></option>
+        </select>
+        <div class="help">
+          <span class="icon">?</span>
+          <span class="ui-tooltip-bottom">Select where you would like your email addresses to be saved from the lists below. The list will FIRST eed
+        </div>
+      <li class="row api">
+        <label>API KEY</label>
+        {{#if news.email_api_key}}
+          {{view Ember.TextField valueBinding="news.email_api_key"}}
+        {{else}}
+          <input placeholder="EXAMPLE: cd93fe0e1b18949a6c41e08be0f80e2-us1" {{bindAttr value="news.email_api_key"}}
+        {{/if}}
+        <div class="help">
+          <span class="icon">?</span>
+          <span class="ui-tooltip-bottom">You will need to enter or paste your API Key below to capture email addresses. Your API Key is found ithin
+        </div>
+    </ul>
+  </div>
+  <footer>
+    <ul>
+      <li><a class="save" {{action "save" on="click"}}>Save</a>
+      <li><a class="cancel" {{action "close" on="click"}}>Cancel</a>
+    </ul>
+  </footer> 

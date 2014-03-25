@@ -1,0 +1,25 @@
+<header>
+  <ul>
+    <li class="title">Choose a Song File
+    <li class="exit"><a class="exit" href="#" {{action "close" on="click"}}>Exit</a>
+  </ul>
+</header>
+<div class="content">
+  <div class="msg">
+    <p>Choose a Song File to Upload:</p>
+    <small>The song you upload must be one of the following file formats:  .MP3  .FLAC .AIFF or .WAV</small>
+    <div class="help">
+      <span class="icon">?</span>
+      <span class="ui-tooltip-bottom">You can give your fans the option of downloading a high definition audio file by uploading a .FLAC .AIFF or .WAV file. MP3 is the most common file type.</span>
+    </div>
+  </div>
+</div>
+<footer>
+  <ul>
+    <li><a class="yes" {{action "selectSongFile" on="click"}}>Choose</a>
+    <li><a class="cancel" {{action "close" on="click"}}>Cancel</a>
+    <form class="hidden" action="javascript:void(0);" method="post">
+      <input class="song-file" name="song[file]" type="file" accept="audio/mp3,audio/mpeg3,audio/x-mpeg-3" {{action "startUpload" on="change"}} />
+    </form>
+  </ul>
+</footer>
