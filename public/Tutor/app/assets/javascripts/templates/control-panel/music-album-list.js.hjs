@@ -1,3 +1,0 @@
-{{#each albums}}
-  {{view App.Views.ControlPanel.AlbumListItem albumBinding="this"}}
-{{/each}}

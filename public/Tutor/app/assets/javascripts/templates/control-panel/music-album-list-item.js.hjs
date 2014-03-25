@@ -1,6 +1,0 @@
-<a href="#" {{action "changeAlbum" on="click"}}>
-  {{#if album.album_cover_url}}
-    <img {{bindAttr src="album.album_cover_url"}} />
-  {{/if}}
-  <span class="settings" {{action "showSettings" on="click"}}>Album Settings</span>
-</a>
